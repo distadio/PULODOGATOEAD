@@ -1,84 +1,77 @@
-import { CourseCard } from "./CourseCard";
 import { Button } from "@/components/ui/button";
+import { CourseCard } from "./CourseCard";
 import { ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const FEATURED_COURSES = [
   {
-    id: "1",
-    title: "Fundamentos de Sonorização ao Vivo",
-    description: "Aprenda os princípios básicos de mixagem, equalização e posicionamento de microfones para eventos ao vivo.",
-    category: "Áudio",
-    duration: "12 horas",
-    students: 2450,
-  },
-  {
-    id: "2",
-    title: "Iluminação Profissional para Eventos",
-    description: "Domine as técnicas de iluminação cênica, programação de consoles DMX e design de luz.",
+    id: "conhecendo-iluminacao",
+    title: "Conhecendo a Iluminação",
+    description: "Visão geral sobre iluminação para vídeo, show e teatro. Aprenda com softwares profissionais usados em eventos como Olimpíadas e Rock in Rio.",
     category: "Iluminação",
-    duration: "10 horas",
-    students: 1820,
+    duration: "Flexível",
+    students: 10500,
+    imageUrl: "https://images.unsplash.com/photo-1501281668745-f7f57925c3b4",
+    badges: ["CURSO PILOTO", "GRATUITO"],
   },
   {
-    id: "3",
-    title: "Sistemas de Line Array e PA",
-    description: "Configuração, alinhamento e otimização de sistemas de som de médio e grande porte.",
-    category: "Áudio",
-    duration: "15 horas",
-    students: 1650,
+    id: "sonorizacao-eventos",
+    title: "Sonorização para Eventos",
+    description: "Fundamentos de áudio ao vivo, mixagem e equalização para diferentes tipos de eventos.",
+    category: "Sonorização",
+    duration: "Em breve",
+    students: 0,
+    imageUrl: "https://images.unsplash.com/photo-1598653222000-6b7b7a552625",
+    badges: ["EM BREVE"],
   },
   {
-    id: "4",
-    title: "Projeção e Mapeamento de Vídeo",
-    description: "Técnicas de video mapping, configuração de projetores e sincronização audiovisual.",
-    category: "Vídeo",
-    duration: "14 horas",
-    students: 980,
+    id: "multimidia-projecao",
+    title: "Multimídia e Projeção",
+    description: "Técnicas de projeção mapeada, VJing e multimídia para eventos corporativos e shows.",
+    category: "Multimídia",
+    duration: "Em breve",
+    students: 0,
+    imageUrl: "https://images.unsplash.com/photo-1516450360452-9312f5e86fc7",
+    badges: ["EM BREVE"],
   },
   {
-    id: "5",
-    title: "Mixagem Digital com Consoles X32",
-    description: "Operação avançada de consoles digitais Behringer X32 e suas aplicações práticas.",
-    category: "Áudio",
-    duration: "8 horas",
-    students: 3100,
-  },
-  {
-    id: "6",
-    title: "Cabeamento e RF para Eventos",
-    description: "Instalação de sistemas de cabeamento estruturado e sistemas wireless profissionais.",
-    category: "Infraestrutura",
-    duration: "10 horas",
-    students: 1250,
+    id: "producao-eventos",
+    title: "Produção de Eventos",
+    description: "Gestão completa de eventos: planejamento, logística e execução de eventos técnicos.",
+    category: "Eventos",
+    duration: "Em breve",
+    students: 0,
+    imageUrl: "https://images.unsplash.com/photo-1492684223066-81342ee5ff30",
+    badges: ["EM BREVE"],
   },
 ];
 
 export const CoursesSection = () => {
   return (
-    <section className="py-20 bg-muted/30">
+    <section className="py-20">
       <div className="container mx-auto px-4 lg:px-6">
-        {/* Section Header */}
-        <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-12">
-          <div className="space-y-3">
-            <h2 className="text-4xl font-bold">Cursos em Destaque</h2>
-            <p className="text-xl text-muted-foreground">
-              Aprenda com os melhores profissionais da indústria
-            </p>
-          </div>
-          <Button variant="outline" size="lg" asChild>
-            <Link to="/courses">
-              Ver Todos os Cursos
-              <ArrowRight className="h-4 w-4" />
-            </Link>
-          </Button>
+        <div className="max-w-3xl mx-auto text-center mb-16">
+          <h2 className="text-4xl lg:text-5xl font-bold mb-4">
+            Cursos em <span className="text-primary">Destaque</span>
+          </h2>
+          <p className="text-lg text-muted-foreground">
+            Aprenda com profissionais que atuam nos maiores eventos do Brasil e do mundo
+          </p>
         </div>
 
-        {/* Courses Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
           {FEATURED_COURSES.map((course) => (
             <CourseCard key={course.id} {...course} />
           ))}
+        </div>
+
+        <div className="text-center">
+          <Button size="lg" variant="outline" asChild>
+            <Link to="/cursos">
+              Ver Todos os Cursos
+              <ArrowRight className="h-5 w-5" />
+            </Link>
+          </Button>
         </div>
       </div>
     </section>

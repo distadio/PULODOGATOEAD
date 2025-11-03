@@ -1,135 +1,121 @@
-import { PlayCircle, Mail, Globe, Youtube, Instagram, Linkedin } from "lucide-react";
 import { Link } from "react-router-dom";
+import { Instagram, Linkedin, Facebook, Youtube, Globe } from "lucide-react";
+import logoVerticalWhite from "@/assets/logo-vertical-white.png";
 
 export const Footer = () => {
   return (
-    <footer className="bg-card border-t border-border">
-      <div className="container mx-auto px-4 lg:px-6 py-12">
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
+    <footer className="bg-secondary text-secondary-foreground pt-16 pb-8">
+      <div className="container mx-auto px-4 lg:px-6">
+        <div className="grid md:grid-cols-2 lg:grid-cols-5 gap-8 mb-12">
           {/* Brand */}
-          <div className="space-y-4">
-            <div className="flex items-center gap-2">
-              <div className="gradient-hero p-2 rounded-lg">
-                <PlayCircle className="h-5 w-5 text-primary-foreground" />
-              </div>
-              <span className="text-lg font-bold">
-                Audio<span className="text-accent">Tech</span>
-              </span>
-            </div>
-            <p className="text-sm text-muted-foreground">
-              Plataforma global de cursos gratuitos em tecnologia para eventos, sonorização e multimídia.
+          <div className="lg:col-span-2 space-y-4">
+            <img src={logoVerticalWhite} alt="Pulo do Gato EAD" className="h-20" />
+            <p className="text-sm text-secondary-foreground/80 max-w-sm">
+              Democratização do EAD Profissionalizante. Cursos 100% gratuitos no segmento 
+              Audiovisual, patrocinados pelas maiores marcas do mercado.
             </p>
-            <div className="flex gap-3">
-              <a
-                href="https://youtube.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="p-2 hover:bg-accent/10 rounded-lg transition-smooth"
-              >
-                <Youtube className="h-5 w-5" />
-              </a>
-              <a
-                href="https://instagram.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="p-2 hover:bg-accent/10 rounded-lg transition-smooth"
-              >
-                <Instagram className="h-5 w-5" />
-              </a>
-              <a
-                href="https://linkedin.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="p-2 hover:bg-accent/10 rounded-lg transition-smooth"
-              >
-                <Linkedin className="h-5 w-5" />
-              </a>
+            <div className="flex items-center gap-2 text-sm">
+              <Globe className="h-4 w-4 text-primary" />
+              <span className="font-medium text-primary">Alcance Global</span>
             </div>
           </div>
 
-          {/* Courses */}
+          {/* Navegação */}
           <div>
-            <h3 className="font-bold mb-4">Cursos</h3>
-            <ul className="space-y-2 text-sm text-muted-foreground">
+            <h3 className="font-bold text-secondary-foreground mb-4">Navegação</h3>
+            <ul className="space-y-2 text-sm">
               <li>
-                <Link to="/courses?category=audio" className="hover:text-primary transition-smooth">
-                  Áudio e Sonorização
+                <Link to="/sobre" className="text-secondary-foreground/80 hover:text-primary transition-smooth">
+                  Quem Somos
                 </Link>
               </li>
               <li>
-                <Link to="/courses?category=lighting" className="hover:text-primary transition-smooth">
-                  Iluminação
+                <Link to="/cursos" className="text-secondary-foreground/80 hover:text-primary transition-smooth">
+                  Cursos
                 </Link>
               </li>
               <li>
-                <Link to="/courses?category=video" className="hover:text-primary transition-smooth">
-                  Vídeo e Projeção
+                <Link to="/parceiros" className="text-secondary-foreground/80 hover:text-primary transition-smooth">
+                  Parceiros
                 </Link>
               </li>
               <li>
-                <Link to="/courses?category=infrastructure" className="hover:text-primary transition-smooth">
-                  Infraestrutura
-                </Link>
-              </li>
-            </ul>
-          </div>
-
-          {/* Company */}
-          <div>
-            <h3 className="font-bold mb-4">Empresa</h3>
-            <ul className="space-y-2 text-sm text-muted-foreground">
-              <li>
-                <Link to="/about" className="hover:text-primary transition-smooth">
-                  Sobre Nós
+                <Link to="/tutores" className="text-secondary-foreground/80 hover:text-primary transition-smooth">
+                  Tutores
                 </Link>
               </li>
               <li>
-                <Link to="/sponsors" className="hover:text-primary transition-smooth">
-                  Patrocinadores
+                <Link to="/eventos" className="text-secondary-foreground/80 hover:text-primary transition-smooth">
+                  Eventos
                 </Link>
               </li>
               <li>
-                <Link to="/instructors" className="hover:text-primary transition-smooth">
-                  Instrutores
-                </Link>
-              </li>
-              <li>
-                <Link to="/contact" className="hover:text-primary transition-smooth">
+                <Link to="/contato" className="text-secondary-foreground/80 hover:text-primary transition-smooth">
                   Contato
                 </Link>
               </li>
             </ul>
           </div>
 
-          {/* Contact */}
+          {/* Cursos */}
           <div>
-            <h3 className="font-bold mb-4">Contato</h3>
-            <ul className="space-y-3 text-sm text-muted-foreground">
-              <li className="flex items-center gap-2">
-                <Mail className="h-4 w-4" />
-                <a href="mailto:contato@audiotech.com" className="hover:text-primary transition-smooth">
-                  contato@audiotech.com
-                </a>
+            <h3 className="font-bold text-secondary-foreground mb-4">Cursos</h3>
+            <ul className="space-y-2 text-sm">
+              <li>
+                <Link to="/cursos/conhecendo-iluminacao" className="text-secondary-foreground/80 hover:text-primary transition-smooth">
+                  Conhecendo a Iluminação
+                </Link>
               </li>
-              <li className="flex items-center gap-2">
-                <Globe className="h-4 w-4" />
-                <span>Acesso global</span>
+              <li>
+                <span className="text-secondary-foreground/50">Sonorização (em breve)</span>
+              </li>
+              <li>
+                <span className="text-secondary-foreground/50">Multimídia (em breve)</span>
               </li>
             </ul>
           </div>
+
+          {/* Redes Sociais */}
+          <div>
+            <h3 className="font-bold text-secondary-foreground mb-4">Redes Sociais</h3>
+            <div className="flex gap-3">
+              <a 
+                href="#" 
+                className="w-10 h-10 bg-secondary-foreground/10 hover:bg-primary/20 rounded-lg flex items-center justify-center transition-smooth group"
+                aria-label="Instagram"
+              >
+                <Instagram className="h-5 w-5 text-secondary-foreground/80 group-hover:text-primary" />
+              </a>
+              <a 
+                href="#" 
+                className="w-10 h-10 bg-secondary-foreground/10 hover:bg-primary/20 rounded-lg flex items-center justify-center transition-smooth group"
+                aria-label="LinkedIn"
+              >
+                <Linkedin className="h-5 w-5 text-secondary-foreground/80 group-hover:text-primary" />
+              </a>
+              <a 
+                href="#" 
+                className="w-10 h-10 bg-secondary-foreground/10 hover:bg-primary/20 rounded-lg flex items-center justify-center transition-smooth group"
+                aria-label="Facebook"
+              >
+                <Facebook className="h-5 w-5 text-secondary-foreground/80 group-hover:text-primary" />
+              </a>
+              <a 
+                href="#" 
+                className="w-10 h-10 bg-secondary-foreground/10 hover:bg-primary/20 rounded-lg flex items-center justify-center transition-smooth group"
+                aria-label="YouTube"
+              >
+                <Youtube className="h-5 w-5 text-secondary-foreground/80 group-hover:text-primary" />
+              </a>
+            </div>
+          </div>
         </div>
 
-        {/* Bottom Bar */}
-        <div className="pt-8 border-t border-border flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-muted-foreground">
-          <p>© 2024 AudioTech. Todos os direitos reservados.</p>
-          <div className="flex gap-6">
-            <Link to="/privacy" className="hover:text-primary transition-smooth">
-              Privacidade
-            </Link>
-            <Link to="/terms" className="hover:text-primary transition-smooth">
-              Termos de Uso
-            </Link>
-          </div>
+        {/* Bottom */}
+        <div className="pt-8 border-t border-secondary-foreground/10 text-center">
+          <p className="text-sm text-secondary-foreground/60">
+            © 2025 Pulo Do Gato EAD - Todos os direitos reservados
+          </p>
         </div>
       </div>
     </footer>

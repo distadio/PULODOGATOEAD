@@ -1,53 +1,71 @@
 import { Button } from "@/components/ui/button";
-import { PlayCircle, Menu, X } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import logoHorizontal from "@/assets/logo-horizontal.png";
+import logoHorizontalWhite from "@/assets/logo-horizontal-white.png";
 
 export const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-lg border-b border-border">
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-lg border-b border-border">
       <div className="container mx-auto px-4 lg:px-6">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
-          <Link to="/" className="flex items-center gap-2 group">
-            <div className="gradient-hero p-2 rounded-lg transition-smooth group-hover:scale-110">
-              <PlayCircle className="h-6 w-6 text-primary-foreground" />
-            </div>
-            <span className="text-xl font-bold">Audio<span className="text-accent">Tech</span></span>
+          <Link to="/" className="flex items-center group">
+            <img 
+              src={logoHorizontal} 
+              alt="Pulo do Gato EAD" 
+              className="h-10 dark:hidden transition-smooth group-hover:scale-105"
+            />
+            <img 
+              src={logoHorizontalWhite} 
+              alt="Pulo do Gato EAD" 
+              className="h-10 hidden dark:block transition-smooth group-hover:scale-105"
+            />
           </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center gap-8">
-            <Link to="/" className="text-foreground hover:text-primary transition-smooth">
+          <div className="hidden md:flex items-center gap-6">
+            <Link to="/" className="text-sm font-medium text-foreground hover:text-primary transition-smooth">
               Início
             </Link>
-            <Link to="/courses" className="text-foreground hover:text-primary transition-smooth">
+            <Link to="/sobre" className="text-sm font-medium text-foreground hover:text-primary transition-smooth">
+              Quem Somos
+            </Link>
+            <Link to="/cursos" className="text-sm font-medium text-foreground hover:text-primary transition-smooth">
               Cursos
             </Link>
-            <Link to="/about" className="text-foreground hover:text-primary transition-smooth">
-              Sobre
+            <Link to="/parceiros" className="text-sm font-medium text-foreground hover:text-primary transition-smooth">
+              Parceiros
             </Link>
-            <Link to="/sponsors" className="text-foreground hover:text-primary transition-smooth">
-              Patrocinadores
+            <Link to="/tutores" className="text-sm font-medium text-foreground hover:text-primary transition-smooth">
+              Tutores
+            </Link>
+            <Link to="/eventos" className="text-sm font-medium text-foreground hover:text-primary transition-smooth">
+              Eventos
+            </Link>
+            <Link to="/contato" className="text-sm font-medium text-foreground hover:text-primary transition-smooth">
+              Contato
             </Link>
           </div>
 
           {/* CTA Buttons */}
           <div className="hidden md:flex items-center gap-3">
-            <Button variant="ghost" asChild>
+            <Button variant="outline" asChild>
               <Link to="/login">Entrar</Link>
             </Button>
-            <Button variant="accent" asChild>
-              <Link to="/signup">Começar Grátis</Link>
+            <Button variant="golden" asChild>
+              <Link to="/cadastro">Começar Grátis</Link>
             </Button>
           </div>
 
           {/* Mobile Menu Button */}
           <button
-            className="md:hidden p-2 hover:bg-accent/10 rounded-lg transition-smooth"
+            className="md:hidden p-2 hover:bg-primary/10 rounded-lg transition-smooth"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
+            aria-label="Menu"
           >
             {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
           </button>
@@ -56,41 +74,62 @@ export const Navbar = () => {
         {/* Mobile Menu */}
         {isMenuOpen && (
           <div className="md:hidden py-4 border-t border-border">
-            <div className="flex flex-col gap-4">
+            <div className="flex flex-col gap-2">
               <Link
                 to="/"
-                className="px-4 py-2 hover:bg-accent/10 rounded-lg transition-smooth"
+                className="px-4 py-2 text-sm font-medium hover:bg-primary/10 rounded-lg transition-smooth"
                 onClick={() => setIsMenuOpen(false)}
               >
                 Início
               </Link>
               <Link
-                to="/courses"
-                className="px-4 py-2 hover:bg-accent/10 rounded-lg transition-smooth"
+                to="/sobre"
+                className="px-4 py-2 text-sm font-medium hover:bg-primary/10 rounded-lg transition-smooth"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                Quem Somos
+              </Link>
+              <Link
+                to="/cursos"
+                className="px-4 py-2 text-sm font-medium hover:bg-primary/10 rounded-lg transition-smooth"
                 onClick={() => setIsMenuOpen(false)}
               >
                 Cursos
               </Link>
               <Link
-                to="/about"
-                className="px-4 py-2 hover:bg-accent/10 rounded-lg transition-smooth"
+                to="/parceiros"
+                className="px-4 py-2 text-sm font-medium hover:bg-primary/10 rounded-lg transition-smooth"
                 onClick={() => setIsMenuOpen(false)}
               >
-                Sobre
+                Parceiros
               </Link>
               <Link
-                to="/sponsors"
-                className="px-4 py-2 hover:bg-accent/10 rounded-lg transition-smooth"
+                to="/tutores"
+                className="px-4 py-2 text-sm font-medium hover:bg-primary/10 rounded-lg transition-smooth"
                 onClick={() => setIsMenuOpen(false)}
               >
-                Patrocinadores
+                Tutores
+              </Link>
+              <Link
+                to="/eventos"
+                className="px-4 py-2 text-sm font-medium hover:bg-primary/10 rounded-lg transition-smooth"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                Eventos
+              </Link>
+              <Link
+                to="/contato"
+                className="px-4 py-2 text-sm font-medium hover:bg-primary/10 rounded-lg transition-smooth"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                Contato
               </Link>
               <div className="flex flex-col gap-2 px-4 pt-2">
-                <Button variant="ghost" asChild className="w-full">
+                <Button variant="outline" asChild className="w-full">
                   <Link to="/login">Entrar</Link>
                 </Button>
-                <Button variant="accent" asChild className="w-full">
-                  <Link to="/signup">Começar Grátis</Link>
+                <Button variant="golden" asChild className="w-full">
+                  <Link to="/cadastro">Começar Grátis</Link>
                 </Button>
               </div>
             </div>
