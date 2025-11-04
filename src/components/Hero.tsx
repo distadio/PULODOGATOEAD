@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Play, Gift, Award, Globe, Heart } from "lucide-react";
 import { Link } from "react-router-dom";
-import heroBg from "@/assets/hero-bg.jpg";
+import heroBg from "@/assets/login-bg.jpg";
 import logoVertical from "@/assets/logo-vertical.png";
 
 export const Hero = () => {
@@ -16,11 +16,19 @@ export const Hero = () => {
           backgroundPosition: 'center',
         }}
       />
-      <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/70 to-background -z-10" />
+      <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/50 to-background/80 -z-10" />
       
-      {/* Logo Watermark */}
-      <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 opacity-5 -z-10">
-        <img src={logoVertical} alt="" className="w-96 h-96 object-contain" />
+      {/* Logo Watermark - Multiple instances for pattern */}
+      <div className="absolute inset-0 -z-10 opacity-[0.03]">
+        <div className="absolute top-1/4 left-1/4 transform -translate-x-1/2 -translate-y-1/2">
+          <img src={logoVertical} alt="" className="w-64 h-64 object-contain" />
+        </div>
+        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+          <img src={logoVertical} alt="" className="w-96 h-96 object-contain" />
+        </div>
+        <div className="absolute top-3/4 right-1/4 transform translate-x-1/2 translate-y-1/2">
+          <img src={logoVertical} alt="" className="w-64 h-64 object-contain" />
+        </div>
       </div>
 
       <div className="container mx-auto px-4 lg:px-6">
