@@ -15,14 +15,9 @@ export const Navbar = () => {
           {/* Logo */}
           <Link to="/" className="flex items-center group">
             <img 
-              src={logoHorizontal} 
-              alt="Pulo do Gato EAD" 
-              className="h-10 dark:hidden transition-smooth group-hover:scale-105"
-            />
-            <img 
               src={logoHorizontalWhite} 
               alt="Pulo do Gato EAD" 
-              className="h-10 hidden dark:block transition-smooth group-hover:scale-105"
+              className="h-10 transition-smooth group-hover:scale-105"
             />
           </Link>
 
