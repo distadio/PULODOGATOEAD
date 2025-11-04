@@ -3,7 +3,7 @@ import { Hero } from "@/components/Hero";
 import { WhySection } from "@/components/WhySection";
 import { CoursesSection } from "@/components/CoursesSection";
 import { SponsorsSection } from "@/components/SponsorsSection";
-import { TutorsSection } from "@/components/TutorsSection";
+import { InstagramFeed } from "@/components/InstagramFeed";
 import { Footer } from "@/components/Footer";
 
 const Index = () => {
@@ -14,7 +14,7 @@ const Index = () => {
       <WhySection />
       <CoursesSection />
       <SponsorsSection />
-      <TutorsSection />
+      <InstagramFeed />
       <Footer />
     </div>
   );
