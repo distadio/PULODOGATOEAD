@@ -37,71 +37,16 @@ export const InstagramFeed = () => {
           </p>
         </div>
 
-        {/* Instagram Embed */}
-        <div className="max-w-6xl mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-            {/* Instagram Post Embed 1 - Replace with actual Instagram post URLs */}
-            <div className="bg-card rounded-lg overflow-hidden shadow-medium">
-              <blockquote 
-                className="instagram-media" 
-                data-instgrm-captioned 
-                data-instgrm-permalink="https://www.instagram.com/p/EXAMPLE1/"
-                data-instgrm-version="14"
-                style={{
-                  background: 'hsl(var(--card))',
-                  border: 0,
-                  borderRadius: '0.75rem',
-                  boxShadow: 'var(--shadow-soft)',
-                  margin: '1px',
-                  maxWidth: '540px',
-                  minWidth: '326px',
-                  padding: 0,
-                  width: 'calc(100% - 2px)'
-                }}
-              />
-            </div>
-
-            {/* Instagram Post Embed 2 */}
-            <div className="bg-card rounded-lg overflow-hidden shadow-medium">
-              <blockquote 
-                className="instagram-media" 
-                data-instgrm-captioned 
-                data-instgrm-permalink="https://www.instagram.com/p/EXAMPLE2/"
-                data-instgrm-version="14"
-                style={{
-                  background: 'hsl(var(--card))',
-                  border: 0,
-                  borderRadius: '0.75rem',
-                  boxShadow: 'var(--shadow-soft)',
-                  margin: '1px',
-                  maxWidth: '540px',
-                  minWidth: '326px',
-                  padding: 0,
-                  width: 'calc(100% - 2px)'
-                }}
-              />
-            </div>
-
-            {/* Instagram Post Embed 3 */}
-            <div className="bg-card rounded-lg overflow-hidden shadow-medium">
-              <blockquote 
-                className="instagram-media" 
-                data-instgrm-captioned 
-                data-instgrm-permalink="https://www.instagram.com/p/EXAMPLE3/"
-                data-instgrm-version="14"
-                style={{
-                  background: 'hsl(var(--card))',
-                  border: 0,
-                  borderRadius: '0.75rem',
-                  boxShadow: 'var(--shadow-soft)',
-                  margin: '1px',
-                  maxWidth: '540px',
-                  minWidth: '326px',
-                  padding: 0,
-                  width: 'calc(100% - 2px)'
-                }}
-              />
-            </div>
+        {/* Instagram Profile Embed */}
+        <div className="max-w-4xl mx-auto">
+          <div className="bg-card rounded-lg overflow-hidden shadow-elegant border border-primary/20">
+            <iframe
+              src="https://www.instagram.com/pulodogatoead/embed"
+              className="w-full"
+              style={{ minHeight: '600px', border: 'none' }}
+              scrolling="no"
+              allowTransparency={true}
+            />
           </div>
 
           {/* CTA */}
@@ -116,15 +61,6 @@ export const InstagramFeed = () => {
               Seguir no Instagram
             </a>
           </div>
-        </div>
-
-        {/* Info Box */}
-        <div className="max-w-2xl mx-auto mt-12 p-6 bg-card border border-primary/20 rounded-lg">
-          <p className="text-sm text-muted-foreground text-center">
-            <span className="text-primary font-semibold">💡 Dica:</span> Para ver as postagens mais recentes, 
-            substitua os URLs de exemplo (EXAMPLE1, EXAMPLE2, EXAMPLE3) pelos links reais das postagens do Instagram do Pulo do Gato EAD. 
-            Basta copiar o link de qualquer postagem do Instagram e colar no código.
-          </p>
         </div>
       </div>
     </section>
