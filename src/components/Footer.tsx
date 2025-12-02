@@ -112,10 +112,18 @@ export const Footer = () => {
         </div>
 
         {/* Bottom */}
-        <div className="pt-8 border-t border-secondary-foreground/10 text-center">
-          <p className="text-sm text-secondary-foreground/60">
-            © 2025 Pulo Do Gato EAD - Todos os direitos reservados
-          </p>
+        <div className="pt-8 border-t border-secondary-foreground/10">
+          <div className="flex flex-col md:flex-row justify-between items-center gap-4">
+            <p className="text-sm text-secondary-foreground/60">
+              © 2025 Pulo Do Gato EAD - Todos os direitos reservados
+            </p>
+            <Link 
+              to="/politica-privacidade" 
+              className="text-sm text-secondary-foreground/80 hover:text-primary transition-smooth"
+            >
+              Política de Privacidade
+            </Link>
+          </div>
         </div>
       </div>
     </footer>
