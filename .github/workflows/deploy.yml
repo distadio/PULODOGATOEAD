@@ -25,6 +25,16 @@ jobs:
       - name: Build project
         run: npm run build
 
+      - name: Verify build output
+        run: |
+          echo "📦 Verificando arquivos gerados..."
+          ls -la dist/ | head -10
+          if [ ! -f "dist/index.html" ]; then
+            echo "❌ Erro: index.html não encontrado no build!"
+            exit 1
+          fi
+          echo "✅ Build verificado com sucesso"
+
       - name: Deploy to FTP
         uses: SamKirkland/FTP-Deploy-Action@v4.3.5
         with:
@@ -32,5 +42,13 @@ jobs:
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
           local-dir: ./dist/
-          server-dir: /home/u950592664/domains/pulodogatoead.com.br/public_html/
+          server-dir: /
           dangerous-clean-slate: false
+          exclude: |
+            **/.git*
+            **/.git*/**
+            **/node_modules/**
+          log-level: verbose
+        env:
+          FTP_SERVER: ${{ secrets.FTP_SERVER }}
+          FTP_USERNAME: ${{ secrets.FTP_USERNAME }}
