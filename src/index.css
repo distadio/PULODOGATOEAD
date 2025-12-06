@@ -49,6 +49,15 @@ All colors MUST be HSL.
     --shadow-medium: 0 4px 30px -4px hsl(0 0% 0% / 0.6);
     --shadow-glow: 0 0 40px hsl(45 100% 51% / 0.5);
     --shadow-golden: 0 8px 32px -8px hsl(45 100% 51% / 0.6);
+
+    --sidebar-background: 0 0% 6%;
+    --sidebar-foreground: 0 0% 98%;
+    --sidebar-primary: 45 100% 51%;
+    --sidebar-primary-foreground: 0 0% 0%;
+    --sidebar-accent: 45 100% 51%;
+    --sidebar-accent-foreground: 0 0% 0%;
+    --sidebar-border: 0 0% 18%;
+    --sidebar-ring: 45 100% 51%;
   }
 
   .dark {
